@@ -1,0 +1,39 @@
+{
+  "name": "@tolland/message_bus",
+  "version": "0.1.0",
+  "description": "Generic message bus for web-ext and electron dev scenarios",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "prettier --check .",
+    "test": "jest"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "author": "Tom Hodder",
+  "license": "MIT",
+  "devDependencies": {
+    "@tolland/context-detector": "link:../context_detector",
+    "@tolland/types-jsonobjects": "link:../../types/jsonobjects",
+    "@types/firefox-webext-browser": "^120.0.4",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.18",
+    "@types/webextension-polyfill": "^0.12.3",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.3",
+    "prettier": "^3.5.3",
+    "typescript": "~5.7.3"
+  },
+  "packageManager": "pnpm@10.11.0",
+  "dependencies": {}
+}

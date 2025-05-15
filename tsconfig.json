@@ -1,0 +1,30 @@
+{
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/__tests__" // Usually good to exclude tests from build output
+  ],
+  "compilerOptions": {
+    "baseUrl": "src", // "baseUrl" is fine, but "paths" might be needed if you use it for aliasing within src
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    // "noEmit": true, // REMOVE THIS LINE or set to false
+    "declaration": true, // ADD THIS: To generate .d.ts files
+    "declarationMap": true, // ADD THIS (optional but good): For better source mapping for types
+    "sourceMap": true, // ADD THIS (optional but good): For .js.map files
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedParameters": true, // Consider "noUnusedLocals" as well
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": true,
+    "target": "ES2022",
+    "module": "ES2022", // Or "NodeNext" or "CommonJS" depending on target environments for JS output
+                        // "ES2022" for module is a good modern default if your consumers support ESM.
+                        // If you need CommonJS for wider compatibility, you might set module to "CommonJS".
+                        // Your package.json "exports" already handles both "import" and "require".
+    "useDefineForClassFields": true
+  }
+}
